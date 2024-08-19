@@ -1,7 +1,14 @@
 ---
-title: Introdução ao Git
-subtitle: Oficina Zero
-format: revealjs
+title: Oficina Zero
+subtitle: Introdução ao Git
+format: 
+  revealjs:
+    width: 1280
+    height: 720
+    theme: assets/style.scss
+title-slide-attributes:
+  data-background-image: assets/capa.svg
+  data-background-size: contain
 ---
 
 ## O que é Git?
