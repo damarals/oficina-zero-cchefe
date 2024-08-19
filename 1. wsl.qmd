@@ -1,0 +1,90 @@
+---
+theme: simple
+---
+
+## Instalação do Windows Terminal
+
+1. Abra o Microsoft Store
+2. Pesquise por "Windows Terminal"
+3. Clique em "Instalar"
+4. Após a instalação, você pode abrir o Windows Terminal pelo menu Iniciar
+
+---
+
+## Configurando o Windows Terminal
+
+- Abra as configurações (Ctrl+,)
+- Defina Ubuntu como perfil padrão
+- Personalize cores, fontes e atalhos conforme sua preferência
+
+---
+
+## Testando a Instalação
+
+No Windows Terminal, abra uma aba do Ubuntu e execute:
+
+```bash
+docker --version
+docker run hello-world
+```
+
+Se tudo estiver correto, você verá a versão do Docker e uma mensagem de sucesso.
+
+---
+
+# Instalação do WSL
+
+---
+
+## Requisitos Mínimos
+
+- Windows 10 (versão 2004 ou superior) ou Windows 11
+- 4GB de RAM (recomendado 8GB)
+- Virtualização habilitada na BIOS
+
+---
+
+## Instalação do WSL 2
+
+1. Abra o PowerShell como administrador
+2. Execute o comando:
+
+```powershell
+wsl --install
+```
+
+3. Reinicie o computador
+
+---
+
+## Configuração do WSL 2
+
+1. Defina WSL 2 como versão padrão:
+
+```powershell
+wsl --set-default-version 2
+```
+
+2. Atualize o WSL:
+
+```powershell
+wsl --update
+```
+
+---
+
+## Instalação do Ubuntu no WSL
+
+1. Abra o Microsoft Store
+2. Pesquise por "Ubuntu"
+3. Clique em "Instalar"
+4. Após a instalação, abra o Ubuntu e crie um usuário
+
+---
+
+## Conclusão
+
+- WSL 2 permite rodar Linux no Windows
+- Docker no Ubuntu (WSL) oferece melhor desempenho
+
+

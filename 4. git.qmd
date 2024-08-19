@@ -1,0 +1,153 @@
+---
+title: Introdução ao Git
+subtitle: Oficina Zero
+format: revealjs
+---
+
+## O que é Git?
+
+* Sistema de controle de versão distribuído
+* Rastreia mudanças nos arquivos do projeto
+* Permite colaboração eficiente em equipe
+
+---
+
+## Instalação do Git
+
+1. Baixe o Git em: https://git-scm.com/downloads
+2. Siga o assistente de instalação
+3. Verifique a instalação:
+
+```bash
+$ git --version
+git version 2.30.1
+```
+
+---
+
+## Configuração Inicial
+
+```bash
+$ git config --global user.name "Seu Nome"
+$ git config --global user.email "seu@email.com"
+```
+
+---
+
+## Criando um Repositório
+
+```bash
+$ mkdir meu-projeto
+$ cd meu-projeto
+$ git init
+Initialized empty Git repository in /caminho/para/meu-projeto/.git/
+```
+
+---
+
+## Ciclo de Vida do Git
+
+1. Modificar arquivos
+2. Preparar mudanças (staging)
+3. Fazer commit das mudanças
+
+---
+
+## Verificando o Status
+
+```bash
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        arquivo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+---
+
+## Adicionando Arquivos ao Staging
+
+```bash
+$ git add arquivo.txt
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   arquivo.txt
+```
+
+---
+
+## Fazendo um Commit
+
+```bash
+$ git commit -m "Meu primeiro commit"
+[master (root-commit) f7846ba] Meu primeiro commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 arquivo.txt
+```
+
+---
+
+## Visualizando o Histórico
+
+```bash
+$ git log
+commit f7846ba3e8a2baa775810a8387b92eda5a3e5c03 (HEAD -> master)
+Author: Seu Nome <seu@email.com>
+Date:   Seg Ago 19 10:00:00 2024 -0300
+
+    Meu primeiro commit
+```
+
+---
+
+## Branches
+
+* Ambientes alternativos para desenvolvimento
+* Permitem trabalhar em diferentes versões do projeto
+
+---
+
+## Criando e Mudando de Branch
+
+```bash
+$ git branch desenvolvimento
+$ git checkout desenvolvimento
+Switched to branch 'desenvolvimento'
+```
+
+---
+
+## Mesclando Branches
+
+```bash
+$ git checkout master
+$ git merge desenvolvimento
+Updating f7846ba..3e8d7a5
+Fast-forward
+ novo-arquivo.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 novo-arquivo.txt
+```
+
+---
+
+## Conclusão
+
+* Git é essencial para desenvolvedores
+* Prática e uso diário aprimoram as habilidades
+* Explore mais: documentação oficial, livros, tutoriais online
+
+---
+
+## Obrigado!
+### Perguntas?
