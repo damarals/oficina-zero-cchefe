@@ -1,36 +1,64 @@
+/*-- scss:defaults --*/
+
+$mermaid-fg-color--lightest:#FFFFFF;
+
 @font-face {
-    font-family: 'Raleway';
-    src: url('../../../../../assets/raleway.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Raleway';
+  src: url('../../../../../assets/raleway.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 /*-- scss:rules --*/
 
-.reveal {
-    font-family: 'Raleway', sans-serif;
+@mixin background-full {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .reveal {
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
+
+  &:has(#title-slide.present) {
+    background-image: url('../../../../../assets/cover.svg');
+    @include background-full;
   }
+}
   
 #title-slide {
-    text-align: left;
-  
-    .title {
-      color: white;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-    }
-  
-    .subtitle {
-      color: white;
-      font-weight: 400;
-    }
-  
-    .quarto-title-authors {
-      justify-content: left;
-    }
+  text-align: left;
+
+  .title {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
   }
+
+  .subtitle {
+    color: white;
+    font-weight: 400;
+  }
+
+  .quarto-title-authors {
+    justify-content: left;
+  }
+}
+
+.slide h2 {
+  font-family: 'Raleway', sans-serif;
+  color: #1300ED
+}
+
+.thanks-slide {
+  h2 {
+    font-weight: 700;
+    font-size: 8rem;
+  }
+
+  &:is(.slide-background) {
+    background-image: url('../../../../../assets/thanks.png');
+    @include background-full;
+  }
+}
