@@ -24,8 +24,7 @@ jobs:
         IFS=$'\n'
         for file in $(find . -name "*.qmd"); do
           quarto render "$file"
-          base_name=$(basename "$file" .qmd)
-          echo  $base_name
+          base_name="${file%.qmd}"
           docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$base_name.pdf"
           git add "$base_name.pdf"
         done
