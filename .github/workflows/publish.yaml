@@ -20,7 +20,7 @@ jobs:
 
     - name: Render and Convert Quarto Documents
       run: |
-        for file in *.qmd; do
+        for file in `find . -name "*.qmd"`; do
           quarto render "$file"
           base_name=$(basename "$file" .qmd)
           docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$base_name.pdf"
