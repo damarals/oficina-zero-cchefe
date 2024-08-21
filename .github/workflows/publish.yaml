@@ -15,32 +15,12 @@ jobs:
     
     - name: Set up Quarto
       uses: quarto-dev/quarto-actions/setup@v2
-      
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          libgl1-mesa-glx \
-          libgl1-mesa-dev \
-          libglu1-mesa-dev \
-          libgtk2.0-dev \
-          libxtst-dev \
-          libxss1 \
-          libx11-dev \
-          xvfb \
-          chromium-browser
         
     - name: Render to HTML and convert to PDF
       run: |
         for file in *.qmd; do
           echo "Processing $file"
           quarto render "$file" --to html
-          chromium-browser --headless --print-to-pdf="${file%.*}.pdf" "${file%.*}.html"
-          git add "${file%.*}.pdf"
+          ls
         done
-        
-    - name: Commit and push
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: "Update PDFs"
-        file_pattern: "*.pdf"
+      
