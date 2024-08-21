@@ -9,6 +9,12 @@ format:
 center: true
 ---
 
+## Oficina Zero
+
+Introdução ao WSL 
+
+---
+
 ## Instalação do Windows Terminal
 
 1. Abra o Microsoft Store

@@ -1,12 +1,16 @@
 ---
-title: Oficina Zero
-subtitle: Introdução ao Git
 format: 
   revealjs:
     width: 1280
     height: 720
     theme: assets/style.scss
 center: true
+---
+
+## Oficina Zero {.title-slide}
+
+Introdução ao Git
+
 ---
 
 ## O que é Git?
@@ -86,6 +90,6 @@ git push
 - Experimentar com repositórios remotos
 - Integrar Git ao seu fluxo de trabalho em ciência de dados
 
-## Obrigado! {.thanks-slide .center}
+## Obrigado! {.thanks-slide}
 
 Perguntas?

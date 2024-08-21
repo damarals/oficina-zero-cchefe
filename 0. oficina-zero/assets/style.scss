@@ -20,24 +20,25 @@ $mermaid-fg-color--lightest:#FFFFFF;
 
 .reveal {
   font-family: 'Raleway', sans-serif;
+}
+  
+.title-slide {
+  text-align: left;
 
-  &:has(#title-slide.present) {
+  &:is(.slide-background) {
     background-image: url('../../../../../assets/cover.svg');
     @include background-full;
   }
-}
-  
-#title-slide {
-  text-align: left;
 
-  .title {
-    color: white;
+  h2 {
+    color: white !important;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
+    font-size: 6.5rem;
   }
 
-  .subtitle {
-    color: white;
+  p {
+    color: white !important;
     font-weight: 400;
   }
 
