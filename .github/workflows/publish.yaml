@@ -18,7 +18,7 @@ jobs:
         
     - name: Render to HTML and convert to PDF
       run: |
-        for file in *.qmd; do
+        for file in $(find . -name '*.qmd' -print); do
           echo "Processing $file"
           quarto render "$file" --to html
           ls
