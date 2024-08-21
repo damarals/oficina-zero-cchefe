@@ -25,7 +25,7 @@ jobs:
         for file in $(find . -name "*.qmd"); do
           dir_name=$(dirname "$file")
           mkdir -p "$dir_name/slides"
-          sudo chmod ugo+rwx "$dir_name/slides"
+          sudo chmod -R 777 "$dir_name/slides"
           base_name="${file%.qmd}"
           pdf_path="$dir_name/slides/$(basename "$base_name").pdf"
 
