@@ -20,7 +20,7 @@ jobs:
 
     - name: Render and Convert Quarto Documents
       run: |
-        ls
+        find . -name "*.qmd"
         for file in `find . -name "*.qmd"`; do
           quarto render "$file"
           base_name=$(basename "$file" .qmd)
