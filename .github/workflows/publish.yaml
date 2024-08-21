@@ -24,8 +24,8 @@ jobs:
     - name: Render to HTML and convert to PDF
       run: |
         quarto render '0. oficina-zero/wsl.qmd'
-        chromium --headless --print-to-pdf=oficina-zero/wsl.pdf oficina-zero/wsl.html
-        git add 0. oficina-zero/wsl.pdf
+        chromium --headless --print-to-pdf='0. oficina-zero/wsl.pdf' '0. oficina-zero/wsl.html'
+        git add '0. oficina-zero/wsl.pdf'
       
     - name: Commit and push PDFs
       run: |
