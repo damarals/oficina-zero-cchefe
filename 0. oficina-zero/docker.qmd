@@ -10,3 +10,7 @@ center: true
 ## Oficina Zero {.title-slide}
 
 Introdução ao Docker
+
+## Obrigado! {.thanks-slide}
+
+Perguntas?

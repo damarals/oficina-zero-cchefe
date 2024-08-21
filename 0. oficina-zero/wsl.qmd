@@ -1,6 +1,4 @@
 ---
-title: Oficina Zero
-subtitle: Introdução ao WSL
 format: 
   revealjs:
     width: 1280
@@ -9,11 +7,9 @@ format:
 center: true
 ---
 
-## Oficina Zero
+## Oficina Zero {.title-slide}
 
 Introdução ao WSL 
-
----
 
 ## Instalação do Windows Terminal
 
@@ -22,15 +18,11 @@ Introdução ao WSL
 3. Clique em "Instalar"
 4. Após a instalação, você pode abrir o Windows Terminal pelo menu Iniciar
 
----
-
 ## Configurando o Windows Terminal
 
 - Abra as configurações (Ctrl+,)
 - Defina Ubuntu como perfil padrão
 - Personalize cores, fontes e atalhos conforme sua preferência
-
----
 
 ## Testando a Instalação
 
@@ -43,19 +35,13 @@ docker run hello-world
 
 Se tudo estiver correto, você verá a versão do Docker e uma mensagem de sucesso.
 
----
-
 # Instalação do WSL
-
----
 
 ## Requisitos Mínimos
 
 - Windows 10 (versão 2004 ou superior) ou Windows 11
 - 4GB de RAM (recomendado 8GB)
 - Virtualização habilitada na BIOS
-
----
 
 ## Instalação do WSL 2
 
@@ -67,8 +53,6 @@ wsl --install
 ```
 
 3. Reinicie o computador
-
----
 
 ## Configuração do WSL 2
 
@@ -84,8 +68,6 @@ wsl --set-default-version 2
 wsl --update
 ```
 
----
-
 ## Instalação do Ubuntu no WSL
 
 1. Abra o Microsoft Store
@@ -93,11 +75,11 @@ wsl --update
 3. Clique em "Instalar"
 4. Após a instalação, abra o Ubuntu e crie um usuário
 
----
-
 ## Conclusão
 
 - WSL 2 permite rodar Linux no Windows
 - Docker no Ubuntu (WSL) oferece melhor desempenho
 
+## Obrigado! {.thanks-slide}
 
+Perguntas?

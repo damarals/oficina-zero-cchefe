@@ -10,3 +10,7 @@ center: true
 ## Oficina Zero {.title-slide}
 
 Introdução ao Linux
+
+## Obrigado! {.thanks-slide}
+
+Perguntas?

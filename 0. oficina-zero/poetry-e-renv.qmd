@@ -10,3 +10,7 @@ center: true
 ## Oficina Zero {.title-slide}
 
 Controle de Dependências com Poetry e Renv
+
+## Obrigado! {.thanks-slide}
+
+Perguntas?

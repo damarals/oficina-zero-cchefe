@@ -11,8 +11,6 @@ center: true
 
 Introdução ao Git
 
----
-
 ## O que é Git?
 
 - Sistema de controle de versão

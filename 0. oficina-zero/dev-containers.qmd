@@ -10,3 +10,7 @@ center: true
 ## Oficina Zero {.title-slide}
 
 Iniciando com Dev Containers
+
+## Obrigado! {.thanks-slide}
+
+Perguntas?
