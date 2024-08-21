@@ -23,6 +23,7 @@ jobs:
         OIFS="$IFS"
         IFS=$'\n'
         for file in $(find . -name "*.qmd"); do
+          sudo chmod ugo+rwx $(dirname "$file")
           quarto render "$file"
           base_name="${file%.qmd}"
           docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$base_name.pdf"

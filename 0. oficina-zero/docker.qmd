@@ -1,0 +1,12 @@
+---
+format: 
+  revealjs:
+    width: 1280
+    height: 720
+    theme: assets/style.scss
+center: true
+---
+
+## Oficina Zero {.title-slide}
+
+Introdução ao Docker
