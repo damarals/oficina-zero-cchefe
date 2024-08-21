@@ -23,14 +23,14 @@ jobs:
         OIFS="$IFS"
         IFS=$'\n'
         for file in $(find . -name "*.qmd"); do
-          dir_name=$(dirname "$file")
+          dir_name=$(dirname "$file")                  // 0. oficina-zero
           sudo chmod ugo+rwx "$dir_name"
-          mkdir -p "$dir_name/slides"
-          base_name="${file%.qmd}"
+          mkdir -p "$dir_name/slides"                  // 0. oficina-zero/slides
+          base_name="${file%.qmd}"                     // git
           pdf_path="$dir_name/slides/$(basename "$base_name").pdf"
 
           quarto render "$file"
-          docker run --rm -t -v ${{ github.workspace }}:/workspace astefanutti/decktape "$base_name.html" "$pdf_path"
+          docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$pdf_path"
 
           git add "$pdf_path"
         done
