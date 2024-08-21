@@ -1,26 +1,46 @@
+name: Quarto Publish
+
 on:
   workflow_dispatch:
   push:
-    branches: main
-
-name: Quarto Publish
+    branches: [main]
 
 jobs:
-  build-deploy:
+
+  build-and-convert:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
-          path: 4.\ git.qmd
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v4
+    
+    - name: Set up Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          libgl1-mesa-glx \
+          libgl1-mesa-dev \
+          libglu1-mesa-dev \
+          libgtk2.0-dev \
+          libxtst-dev \
+          libxss1 \
+          libx11-dev \
+          xvfb \
+          chromium-browser
+        
+    - name: Render to HTML and convert to PDF
+      run: |
+        for file in *.qmd; do
+          echo "Processing $file"
+          quarto render "$file" --to html
+          chromium-browser --headless --print-to-pdf="${file%.*}.pdf" "${file%.*}.html"
+          git add "${file%.*}.pdf"
+        done
+        
+    - name: Commit and push
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Update PDFs"
+        file_pattern: "*.pdf"

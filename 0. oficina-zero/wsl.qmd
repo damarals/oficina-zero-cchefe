@@ -1,5 +1,12 @@
 ---
-theme: simple
+title: Oficina Zero
+subtitle: Introdução ao WSL
+format: 
+  revealjs:
+    width: 1280
+    height: 720
+    theme: assets/style.scss
+center: true
 ---
 
 ## Instalação do Windows Terminal
