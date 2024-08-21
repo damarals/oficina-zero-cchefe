@@ -20,13 +20,16 @@ jobs:
 
     - name: Render and Convert Quarto Documents
       run: |
+        OIFS="$IFS"
+        IFS=$'\n'
         for file in $(find . -name "*.qmd"); do
-          echo $file
           quarto render "$file"
           base_name=$(basename "$file" .qmd)
           docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$base_name.pdf"
           git add "$base_name.pdf"
         done
+        IFS="$OIFS"
+        
       
     - name: Commit and push PDFs
       run: |
