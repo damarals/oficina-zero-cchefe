@@ -22,6 +22,7 @@ jobs:
       run: |
         find . -name "*.qmd"
         for file in `find . -name "*.qmd"`; do
+          echo $file
           quarto render "$file"
           base_name=$(basename "$file" .qmd)
           docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$base_name.pdf"
