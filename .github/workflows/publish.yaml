@@ -23,10 +23,10 @@ jobs:
         OIFS="$IFS"
         IFS=$'\n'
         for file in $(find . -name "*.qmd"); do
-          dir_name=$(dirname "$file")                  // 0. oficina-zero
+          dir_name=$(dirname "$file")
           sudo chmod ugo+rwx "$dir_name"
-          mkdir -p "$dir_name/slides"                  // 0. oficina-zero/slides
-          base_name="${file%.qmd}"                     // git
+          mkdir -p "$dir_name/slides"
+          base_name="${file%.qmd}"
           pdf_path="$dir_name/slides/$(basename "$base_name").pdf"
 
           quarto render "$file"
