@@ -20,8 +20,7 @@ jobs:
 
     - name: Render and Convert Quarto Documents
       run: |
-        find . -name "*.qmd"
-        for file in `find . -name "*.qmd"`; do
+        for file in $(find . -name "*.qmd"); do
           echo $file
           quarto render "$file"
           base_name=$(basename "$file" .qmd)
