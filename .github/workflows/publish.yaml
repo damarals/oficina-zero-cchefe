@@ -12,12 +12,22 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
-    
+
+    - name: Install Chromium
+      run: |
+        apt-get update
+        apt-get install -y chromium-browser
+
     - name: Set up Quarto
       uses: quarto-dev/quarto-actions/setup@v2
         
     - name: Render to HTML and convert to PDF
       run: |
-        ls
         quarto render '0. oficina-zero/wsl.qmd'
+        chromium --headless --print-to-pdf=oficina-zero/wsl.pdf oficina-zero/wsl.html
+        git add 0. oficina-zero/wsl.pdf
       
+    - name: Commit and push PDFs
+      run: |
+        git commit -m "Add generated PDFs"
+        git push
