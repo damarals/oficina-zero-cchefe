@@ -17,17 +17,19 @@ jobs:
       uses: quarto-dev/quarto-actions/setup@v2
       with:
         tinytex: true
-        
-    - name: Render to HTML and convert to PDF
+
+    - name: Render and Convert Quarto Documents
       run: |
-        quarto render '0. oficina-zero/wsl.qmd'
-        sudo chmod ugo+rwx '0. oficina-zero'
-        docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape '0. oficina-zero/wsl.html' '0. oficina-zero/wsl.pdf'
-        git add '0. oficina-zero/wsl.pdf'
+        for file in *.qmd; do
+          quarto render "$file"
+          base_name=$(basename "$file" .qmd)
+          docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$base_name.pdf"
+          git add "$base_name.pdf"
+        done
       
     - name: Commit and push PDFs
       run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git commit -m "Add generated PDFs"
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git commit -m "Update PDFs"
         git push
