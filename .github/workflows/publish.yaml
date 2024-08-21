@@ -17,5 +17,7 @@ jobs:
       uses: quarto-dev/quarto-actions/setup@v2
         
     - name: Render to HTML and convert to PDF
-      run: quarto render wsl.qmd
+      run: |
+        ls
+        quarto render '0. oficina-zero/wsl.qmd'
       
