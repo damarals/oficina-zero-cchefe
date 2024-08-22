@@ -30,7 +30,7 @@ jobs:
           pdf_path="$dir_name/slides/$(basename "$base_name").pdf"
 
           quarto render "$file"
-          docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$pdf_path"
+          docker run --rm -t -v ${{ github.workspace }}:/slides astefanutti/decktape "$base_name.html" "$pdf_path" -s 1280x720
 
           git add "$pdf_path"
         done

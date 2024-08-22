@@ -52,6 +52,26 @@ $mermaid-fg-color--lightest:#FFFFFF;
   color: #1300ED
 }
 
+.chapter-slide {
+  h1 {
+    font-weight: 700;
+    font-size: 8rem;
+    text-align: center !important;
+    color: #1300ED
+  }
+
+  p {
+    text-align: center !important;
+    color: #1300ED !important;
+    font-weight: 400;
+  }
+
+  &:is(.slide-background) {
+    background-image: url('../../../../../assets/chapter.png');
+    @include background-full;
+  }
+}
+
 .thanks-slide {
   h2 {
     font-weight: 700;

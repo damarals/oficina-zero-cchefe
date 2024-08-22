@@ -11,18 +11,54 @@ center: true
 
 Introdução ao Git
 
+## Problemas no Desenvolvimento Colaborativo
+
+- Compartilhamento de Código Difícil
+- Versões de Código Desatualizadas e Confusas
+- Conflitos e Perda de Trabalho
+- Zero Histórico e Controle
+
 ## O que é Git?
 
-- Sistema de controle de versão
-- Criado por Linus Torvalds em 2005
-- Essencial para colaboração em projetos de software
+- **Git** é um sistema de controle de versão distribuído.
+- Criado por Linus Torvalds em 2005.
+- Projetado para ser rápido, simples e suportar desenvolvimento distribuído.
 
-## Por que usar Git?
+## Vantagens do Git
 
-- Rastreia mudanças no código
-- Facilita colaboração em equipe
-- Permite experimentar sem medo
-- Mantém um histórico completo do projeto
+1. Versionamento de Arquivos
+2. Colaboração
+3. Distribuição
+
+# Configuração do Git {.chapter-slide}
+
+## Instalação do Git
+
+- Linux: 
+
+    ```bash
+    sudo apt-get install git
+    ```
+- Mac:
+
+    ```bash
+    brew install git
+    ```
+- Windows: **Usar WSL**... e aí cai no Linux 💪
+
+## Configuração Inicial
+
+1. Configurar Nome e Email:
+
+    ```bash
+    git config --global user.name "Seu Nome"
+    git config --global user.email "seu.email@exemplo.com"
+    ```
+2. Arquivos de Configuração:
+    - Global: `~/.gitconfig`
+    - Local: `.git/config`
+
+# *Deep Dive* 🌊 {.chapter-slide}
 
 ## Conceitos Básicos
 
@@ -51,23 +87,39 @@ flowchart LR;
     D --> |"git push"| E(Repositório Remoto);
 ```
 
-## Comandos Essenciais
+## Comandos Básicos
 
-Aqui estão alguns dos comandos Git mais importantes:
+1. Criar e Inicializar Repositório:
 
-```
-git init
-git add
-git commit
-git status
-git push
-```
+    ```bash
+    mkdir projeto-git
+    cd projeto-git
+    git init
+    ```
+
+2. Adicionar Arquivo:
+
+    ```bash
+    touch README.md
+    git add README.md
+    git commit -m "docs: add README"
+    ```
 
 ## Branches
 
 - Linhas independentes de desenvolvimento
 - Permitem trabalhar em funcionalidades isoladas
 - Facilitam experimentos sem afetar o código principal
+- Criar Branch:
+
+    ```bash
+    git branch nova-feature
+    ```
+- Trocar para Branch:
+
+    ```bash
+    git checkout nova-feature
+    ```
 
 ## Mesclagem (Merge)
 
@@ -75,18 +127,39 @@ git push
 - Integra novas funcionalidades ao código principal
 - Pode requerer resolução de conflitos
 
-## Repositórios Remotos
+# Repositórios Remotos {.chapter-slide}
+
+Github e Gitlab
+
+## Vantagens
 
 - Permitem colaboração entre equipes
-- Servem como backup do seu código
-- Exemplos: GitHub, GitLab, Bitbucket
+- Servem como **backup em nuvem** do seu código
+- Exemplos: GitHub e GitLab
 
-## Próximos Passos
+## Clonando um Repositório
 
-- Praticar comandos básicos
-- Explorar branches e merges
-- Experimentar com repositórios remotos
-- Integrar Git ao seu fluxo de trabalho em ciência de dados
+```bash
+git clone https://github.com/usuario/repo.git
+cd repo
+```
+
+## Arquivo `.gitignore`
+
+- Ignorar Arquivos "Temporários":
+
+    ```plaintext
+    *.log
+    node_modules/
+    .env
+    ```
+
+## Importância do `README.md`
+
+- Documentação Essencial:
+  - Descrição do projeto.
+  - Instruções de instalação e uso.
+  - Como contribuir.
 
 ## Obrigado! {.thanks-slide}
 

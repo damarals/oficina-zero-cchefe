@@ -1,6 +1,7 @@
 ---
 format: 
   revealjs:
+    slide-number: c/t
     width: 1280
     height: 720
     theme: assets/style.scss
