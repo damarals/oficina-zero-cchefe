@@ -3,6 +3,7 @@ format:
   revealjs:
     width: 1280
     height: 720
+    slide-number: c/t
     theme: assets/style.scss
 center: true
 ---
@@ -30,7 +31,7 @@ Introdução ao Git
 2. Colaboração
 3. Distribuição
 
-# Configuração do Git {.chapter-slide}
+## Configuração do Git {.chapter-slide}
 
 ## Instalação do Git
 
@@ -58,7 +59,7 @@ Introdução ao Git
     - Global: `~/.gitconfig`
     - Local: `.git/config`
 
-# *Deep Dive* 🌊 {.chapter-slide}
+## *Deep Dive* 🌊 {.chapter-slide}
 
 ## Conceitos Básicos
 
@@ -127,7 +128,7 @@ flowchart LR;
 - Integra novas funcionalidades ao código principal
 - Pode requerer resolução de conflitos
 
-# Repositórios Remotos {.chapter-slide}
+## Repositórios Remotos {.chapter-slide}
 
 Github e Gitlab
 
@@ -136,6 +137,32 @@ Github e Gitlab
 - Permitem colaboração entre equipes
 - Servem como **backup em nuvem** do seu código
 - Exemplos: GitHub e GitLab
+
+## Configuração do GitHub e GitLab
+
+Hoje (2024), podemos interagir com a API do github/gitlab via:
+
+1. SSH
+
+    - Gerar chave SSH:
+    
+    ```bash
+    ssh-keygen -t ed25519 -C "seu.email@exemplo.com"
+    ```
+
+    - Adicionar chave à sua conta GitHub/GitLab
+
+2. Access Token
+
+    - Gerar token nas configurações da conta
+    - Usar como senha ao clonar via HTTPS
+
+## GitLab: Solução Empresarial
+
+- Hospedagem de código privativo
+- Implantação na infraestrutura própria
+- CI/CD integrado
+- Gerenciamento de projetos avançado
 
 ## Clonando um Repositório
 
@@ -146,20 +173,20 @@ cd repo
 
 ## Arquivo `.gitignore`
 
-- Ignorar Arquivos "Temporários":
+Ignorar Arquivos "Temporários":
 
-    ```plaintext
-    *.log
-    node_modules/
-    .env
-    ```
+```plaintext
+*.log
+node_modules/
+.env
+```
 
 ## Importância do `README.md`
 
 - Documentação Essencial:
-  - Descrição do projeto.
-  - Instruções de instalação e uso.
-  - Como contribuir.
+- Descrição do projeto.
+- Instruções de instalação e uso.
+- Como contribuir.
 
 ## Obrigado! {.thanks-slide}
 

@@ -20,6 +20,13 @@ $mermaid-fg-color--lightest:#FFFFFF;
 
 .reveal {
   font-family: 'Raleway', sans-serif;
+  background: none;
+
+  &:has(.slides > section.title-slide:not([hidden])) {
+    .slide-number {
+      display: none !important;
+    }
+  }
 }
   
 .title-slide {
@@ -53,7 +60,7 @@ $mermaid-fg-color--lightest:#FFFFFF;
 }
 
 .chapter-slide {
-  h1 {
+  h2 {
     font-weight: 700;
     font-size: 8rem;
     text-align: center !important;
